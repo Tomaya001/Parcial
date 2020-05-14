@@ -5,12 +5,10 @@ using System;
 
 namespace com.TosomaTomaya.pjs
 {
-    public class Stats
+    [Serializable]
+    public class PjList
     {
-        public int vida;
-        public int daño;
-        public int armadura;
-        public int velocidad;
+        public List<PjsRef> pjs;
     }
 }
 

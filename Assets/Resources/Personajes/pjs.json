@@ -1,0 +1,26 @@
+{
+  "pjs": [
+    {
+      "nombre": "Peleador",
+      "stats" :[
+       {
+        "vida": "100",
+        "daño": "10",
+        "armor": "5",
+        "speed": "10"
+	   }
+	  ]
+    },
+    {
+      "nombre": "Mago",
+      "stats":[
+       {
+        "vida": "90",
+        "daño": "20",
+        "armor": "3",
+        "speed": "12"
+	   }
+	  ]      
+    }
+  ]
+}
