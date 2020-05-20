@@ -4,49 +4,35 @@ using UnityEngine;
 
 public class ProyectileComponet : MonoBehaviour
 {
-    Transform t;
-    float speed;
-    Vector3 target;
+    public Transform target;
+    public Transform t;
+    public Rigidbody rb;
+    public float speed;
+    public float time;
 
-
-    private void Awake()
-    {
-        t = transform;
-        speed = 50f;
-    }
+    // Start is called before the first frame update
 
     private void OnEnable()
     {
-        target = Camera.main.ViewportPointToRay(t.position).GetPoint(200f);
-        Debug.Log(target);
+        target = GameObject.Find("Target").transform;
+        Launch();
+        Invoke("DisableMe", time);
+    }
+
+    public void Launch()
+    {
         t.LookAt(target);
-        IEnumerator mirutina = Move(target, speed);
-        StartCoroutine(mirutina);
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+        rb.velocity = transform.forward * speed;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Debug.DrawRay(Camera.main.transform.position, target, Color.red);
-    }
-
-    private void OnCollisionEnter(Collision collision)
+    void DisableMe()
     {
         gameObject.SetActive(false);
     }
 
-    IEnumerator Move(Vector3 possf, float speed)
+    private void OnCollisionEnter(Collision collision)
     {
-        while(t.position.y < possf.y)
-        {
-            t.Translate(Vector3.forward * speed * Time.deltaTime);
-        }
-        yield return null;
+        DisableMe();
     }
 
 }

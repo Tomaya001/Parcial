@@ -17,6 +17,6 @@ public class GyroMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Input.gyro.rotationRate);
+        transform.Rotate(Input.gyro.rotationRate * -1);
     }
 }

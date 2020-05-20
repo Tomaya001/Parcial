@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - TEST
+  - Fire
+  - Target
   layers:
   - Default
   - TransparentFX
@@ -14,6 +16,9 @@ TagManager:
   - UI
   - 
   - 
+  - Player
+  - Enemigo
+  - Entorno
   - 
   - 
   - 
@@ -33,10 +38,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Target
   - TEST
   m_SortingLayers:
   - name: Default
