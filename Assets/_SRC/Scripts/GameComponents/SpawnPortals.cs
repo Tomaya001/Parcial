@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class SpawnPortals : MonoBehaviour
 {
-    static List<GameObject> portalsPool;
+    public static List<GameObject> portalsPool;
     public GameObject[] spawnsPoints;
     public float time;
 
@@ -17,7 +17,6 @@ public class SpawnPortals : MonoBehaviour
     {
         portalsPool = new List<GameObject>();
         portal = Resources.Load(Constants.PREFAB.PORTALS) as GameObject;
-        Debug.Log(portal.name);
         StartCoroutine(PortalSpawn());
     }
 
@@ -29,7 +28,6 @@ public class SpawnPortals : MonoBehaviour
 
     IEnumerator PortalSpawn()
     {
-        Debug.Log(portalsPool.Count);
         if (portalsPool.Count <= 0)
         {
             PoolObjects.instances.CrearPool(portalsPool,portal,5);

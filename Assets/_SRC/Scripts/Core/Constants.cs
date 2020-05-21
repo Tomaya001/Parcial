@@ -11,6 +11,7 @@ namespace com.TosomaTomaya.core
             public static int PLAYER = 8;
             public static int ENEMY = 9;
             public static int ENTORNO = 10;
+            public static int PLAYERPROYECTILE = 11;
             public static int TARGET = 30;
             public static int TEST = 31;
         }
@@ -19,6 +20,8 @@ namespace com.TosomaTomaya.core
         {
             public static string FIREBALL = "Prefab/Fireball";
             public static string PORTALS = "Prefab/Portal";
+            public static string ENEMY1 = "Prefab/Enemys/Enemy1";
+            public static string ENEMY2 = "Prefab/Enemys/Enemy2";
         }
 
         public static class RESOURCES
@@ -42,12 +45,15 @@ namespace com.TosomaTomaya.core
         {
             public static string MAIN = "MenuScene";
             public static string GAMEPLAY = "GamePlayScene";
+            public static string GAMEOVER = "GameOverScene";
+            public static string YOUWIN = "YouWinScene";
         }
 
         public static class TAG
         {
             public static string MAIN = "Main";
             public static string PORTAL = "Portal";
+            public static string PLAYER = "Player";
         }
 
         public static class AUDIO_MIXER

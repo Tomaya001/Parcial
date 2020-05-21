@@ -77,5 +77,10 @@ namespace com.TosomaTomaya.core {
 
     }
 
+    public static class Variables
+    {
+        public static int puntos = 0;
+    }
+
 
 }
