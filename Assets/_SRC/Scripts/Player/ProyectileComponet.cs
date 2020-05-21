@@ -10,7 +10,14 @@ public class ProyectileComponet : MonoBehaviour
     public float speed;
     public float time;
 
+    AudioSource source;
+
     // Start is called before the first frame update
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
 
     private void OnEnable()
     {
@@ -23,6 +30,7 @@ public class ProyectileComponet : MonoBehaviour
     {
         t.LookAt(target);
         rb.velocity = transform.forward * speed;
+        source.Play();
     }
 
     void DisableMe()
