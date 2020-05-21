@@ -6,18 +6,28 @@ using UnityEngine.SceneManagement;
 
 public class ButtonsEvents: MonoBehaviour
 {
+    IEnumerator myCor;
+
     public void RunGame()
     {
-        SceneManager.LoadSceneAsync(Constants.SCENES.GAMEPLAY);
+        myCor = Wait(Constants.SCENES.GAMEPLAY);
+        StartCoroutine(myCor);
     }
 
     public void MenuLoad()
     {
-        SceneManager.LoadSceneAsync(Constants.SCENES.MAIN);
+        myCor = Wait(Constants.SCENES.MAIN);
+        StartCoroutine(myCor);
     }
 
     public void Exit()
     {
         Application.Quit();
+    }
+
+    IEnumerator Wait(string scene)
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadSceneAsync(scene);
     }
 }
