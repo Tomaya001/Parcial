@@ -25,7 +25,6 @@ namespace com.TosomaTomaya.pjs
 
                 //personajes.Add(p.stat, p.value);
             }
-            Debug.Log(personajes);
         }
 
     }
