@@ -6,14 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class PlayerComponent : MonoBehaviour
 {
+    public int puntosnecesarios;
+
     private void Start()
     {
+        Variables.puntos = 0;
         StartCoroutine(WinCondition());
     }
 
     IEnumerator WinCondition()
     {
-        while(Variables.puntos <10)
+        while(Variables.puntos < puntosnecesarios)
         {
             yield return null;
         }

@@ -11,13 +11,22 @@ public class EnemyMove : MonoBehaviour
     public int vida = 2;
     public int speed = 5;
 
+    private int hp;
+
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
+        hp = vida;
         t = transform;
-        playerPos = GameObject.FindGameObjectWithTag(Constants.TAG.PLAYER).GetComponent<Transform>();
+
+    }
+
+    private void OnEnable()
+    {
         StartCoroutine(Vida());
+        vida = hp;
+        playerPos = GameObject.FindGameObjectWithTag(Constants.TAG.PLAYER).GetComponent<Transform>();
     }
 
     private void Update()
