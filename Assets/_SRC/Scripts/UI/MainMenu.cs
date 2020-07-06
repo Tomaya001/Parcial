@@ -3,11 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor.Audio;
 
 public class MainMenu : MonoBehaviour
 {
-    public AudioMixerEffectPlugin audioMixer;
     public Slider UISliderMusicVolumen;
 
 
